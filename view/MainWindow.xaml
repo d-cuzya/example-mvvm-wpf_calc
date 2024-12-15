@@ -7,20 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="482" Width="419">
     <Grid HorizontalAlignment="Center" Width="421">
-        <Label Name="labelRes" Content="" HorizontalAlignment="Center" Height="45" Margin="0,10,0,0" VerticalAlignment="Top" Width="358"/>
-        <Button Content="7" HorizontalAlignment="Left" Height="71" Margin="22,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="8" HorizontalAlignment="Left" Height="71" Margin="114,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="9" HorizontalAlignment="Left" Height="71" Margin="201,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Label Name="labelRes" Content="{Binding numbers}" HorizontalAlignment="Center" Height="45" Margin="0,10,0,0" VerticalAlignment="Top" Width="358"/>
+        <Button Content="7" Command="" CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}" HorizontalAlignment="Left" Height="71" Margin="22,93,0,0" VerticalAlignment="Top" Width="70" />
+        <Button Content="8" Command="{Binding addNumber}" HorizontalAlignment="Left" Height="71" Margin="114,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="9" Command="{Binding addNumber}" HorizontalAlignment="Left" Height="71" Margin="201,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="/" HorizontalAlignment="Left" Height="71" Margin="310,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="4" HorizontalAlignment="Left" Height="71" Margin="22,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="5" HorizontalAlignment="Left" Height="71" Margin="114,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="6" HorizontalAlignment="Left" Height="71" Margin="202,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="4" Command="{Binding addNumber}" HorizontalAlignment="Left" Height="71" Margin="22,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="5" Command="{Binding addNumber}" HorizontalAlignment="Left" Height="71" Margin="114,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="6" Command="{Binding addNumber}" HorizontalAlignment="Left" Height="71" Margin="202,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="*" HorizontalAlignment="Left" Height="71" Margin="310,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="1" HorizontalAlignment="Left" Height="71" Margin="22,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="2" HorizontalAlignment="Left" Height="71" Margin="114,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="3" HorizontalAlignment="Left" Height="71" Margin="201,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="1" Command="{Binding addNumber}" HorizontalAlignment="Left" Height="71" Margin="22,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="2" Command="{Binding addNumber}" HorizontalAlignment="Left" Height="71" Margin="114,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="3" Command="{Binding addNumber}" HorizontalAlignment="Left" Height="71" Margin="201,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="+" HorizontalAlignment="Left" Height="71" Margin="310,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="0" HorizontalAlignment="Left" Height="71" Margin="22,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="0" Command="{Binding addNumber}" HorizontalAlignment="Left" Height="71" Margin="22,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="C" HorizontalAlignment="Left" Height="71" Margin="114,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="Enter" HorizontalAlignment="Left" Height="71" Margin="202,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="-" HorizontalAlignment="Left" Height="71" Margin="310,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>

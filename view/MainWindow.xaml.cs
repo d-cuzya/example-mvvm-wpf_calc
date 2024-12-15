@@ -23,6 +23,7 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
+            CommandBindings.Add(new CommandBinding(AddNumberCommand, AddNumber));
         }
     }
 }
