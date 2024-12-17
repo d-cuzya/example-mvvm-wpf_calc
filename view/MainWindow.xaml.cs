@@ -21,9 +21,10 @@ namespace WpfApp2
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {
+        {   
             InitializeComponent();
-            SaveCommand = new RelayCommand(AddNumber, CanAddNumber);
+            AddNumberCommand = new RelayCommand(AddNumber, CanAddNumber);
+            this.DataContext = this;
         }
     }
 }

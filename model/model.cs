@@ -52,16 +52,17 @@ namespace WpfApp2
     }
     public partial class MainWindow
     {
-        public ICommand SaveCommand { get; }
+        public ICommand AddNumberCommand { get; }
         public int numbers = 0;
         
         private void AddNumber(object parameter)
         {
-            Console.WriteLine("asd");
+            Console.WriteLine(parameter);
             numbers = numbers * 10 + (int)parameter;
         }
         private bool CanAddNumber(object parameter)
         {
+            Console.WriteLine("dsaa");
             return true;
         }
     }
