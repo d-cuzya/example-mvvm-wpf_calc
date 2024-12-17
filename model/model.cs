@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -12,21 +14,56 @@ using System.Windows.Interop;
 
 namespace WpfApp2
 {
+    public class RelayCommand : ICommand
+    {
+        private readonly Action<object> _execute;
+        private readonly Predicate<object> _canExecute;
+
+        public RelayCommand(Action<object> execute) : this(execute, null)
+        {
+        }
+
+        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
+        {
+            _execute = execute ?? throw new ArgumentNullException(nameof(execute));
+            _canExecute = canExecute;
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return _canExecute == null || _canExecute(parameter);
+        }
+
+        public void Execute(object parameter)
+        {
+            _execute(parameter);
+        }
+
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
+
+        public void RaiseCanExecuteChanged()
+        {
+            CommandManager.InvalidateRequerySuggested();
+        }
+    }
     public partial class MainWindow
     {
+        public ICommand SaveCommand { get; }
         public int numbers = 0;
-        public static readonly RoutedCommand AddNumberCommand = new RoutedCommand();
-
-        public void AddNumber(object sender, ExecutedRoutedEventArgs e)
+        
+        private void AddNumber(object parameter)
         {
-            numbers = numbers * 10 + (int)e.Parameter;
+            Console.WriteLine("asd");
+            numbers = numbers * 10 + (int)parameter;
         }
-        private void plus(Label a, Label b)
+        private bool CanAddNumber(object parameter)
         {
-            if (a.ToString() == "")
-            {
-                MessageBox.Show("Надо что нить написать!", "Error", MessageBoxButton.OK);
-            }
+            return true;
         }
     }
 }
+
