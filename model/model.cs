@@ -53,15 +53,41 @@ namespace WpfApp2
     public partial class MainWindow
     {
         public ICommand AddNumberCommand { get; }
+        public ICommand AddActionCommand { get; }
         public uint numbers = 0;
         
         private void AddNumber(object parameter)
         {
-            Console.WriteLine(parameter);
             numbers = numbers * 10 + Convert.ToUInt32(parameter.ToString());
-            Console.WriteLine("Current: " + numbers);
+        }
+        private void Action(object parameter)
+        {
+            switch (parameter.ToString()){
+                case "+":
+                    Console.WriteLine("action");
+                    break;
+                case "-":
+                    Console.WriteLine("action");
+                    break;
+                case "*":
+                    Console.WriteLine("action");
+                    break;
+                case "/":
+                    Console.WriteLine("action");
+                    break;
+                case "Enter":
+                    Console.WriteLine("action");
+                    break;
+                case "Clear":
+                    Console.WriteLine("action");
+                    break;
+            }
         }
         private bool CanAddNumber(object parameter)
+        {
+            return true;
+        }
+        private bool CanAction(object parameter)
         {
             return true;
         }

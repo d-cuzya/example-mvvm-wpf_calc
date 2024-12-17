@@ -11,19 +11,19 @@
         <Button Content="7" Command="{Binding AddNumberCommand}" CommandParameter="7" HorizontalAlignment="Left" Height="71" Margin="22,93,0,0" VerticalAlignment="Top" Width="70" />
         <Button Content="8" Command="{Binding AddNumberCommand}" CommandParameter="8" HorizontalAlignment="Left" Height="71" Margin="114,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="9" Command="{Binding AddNumberCommand}" CommandParameter="9" HorizontalAlignment="Left" Height="71" Margin="201,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="/" HorizontalAlignment="Left" Height="71" Margin="310,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="/" Command="{Binding AddActionCommand}" CommandParameter="/" HorizontalAlignment="Left" Height="71" Margin="310,93,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="4" Command="{Binding AddNumberCommand}" CommandParameter="4" HorizontalAlignment="Left" Height="71" Margin="22,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="5" Command="{Binding AddNumberCommand}" CommandParameter="5" HorizontalAlignment="Left" Height="71" Margin="114,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="6" Command="{Binding AddNumberCommand}" CommandParameter="6" HorizontalAlignment="Left" Height="71" Margin="202,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="*" HorizontalAlignment="Left" Height="71" Margin="310,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="*" Command="{Binding AddActionCommand}" CommandParameter="+" HorizontalAlignment="Left" Height="71" Margin="310,177,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="1" Command="{Binding AddNumberCommand}" CommandParameter="1" HorizontalAlignment="Left" Height="71" Margin="22,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="2" Command="{Binding AddNumberCommand}" CommandParameter="2" HorizontalAlignment="Left" Height="71" Margin="114,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Button Content="3" Command="{Binding AddNumberCommand}" CommandParameter="3" HorizontalAlignment="Left" Height="71" Margin="201,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="+" HorizontalAlignment="Left" Height="71" Margin="310,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="0" HorizontalAlignment="Left" Height="71" Margin="22,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="C" HorizontalAlignment="Left" Height="71" Margin="114,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="Enter" HorizontalAlignment="Left" Height="71" Margin="202,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
-        <Button Content="-" HorizontalAlignment="Left" Height="71" Margin="310,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="+" Command="{Binding AddActionCommand}" CommandParameter="+" HorizontalAlignment="Left" Height="71" Margin="310,269,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="0" Command="{Binding AddNumberCommand}" CommandParameter="0" HorizontalAlignment="Left" Height="71" Margin="22,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="C" Command="{Binding AddActionCommand}" CommandParameter="Clear" HorizontalAlignment="Left" Height="71" Margin="114,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="Enter" Command="{Binding AddActionCommand  }" CommandParameter="Enter" HorizontalAlignment="Left" Height="71" Margin="202,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
+        <Button Content="-" Command="{Binding AddActionCommand}" CommandParameter="-" HorizontalAlignment="Left" Height="71" Margin="310,353,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click"/>
         <Label Name="labelOld" Content="" HorizontalAlignment="Left" Height="22" Margin="201,60,0,0" VerticalAlignment="Top" Width="174"/>
 
     </Grid>

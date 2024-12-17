@@ -24,6 +24,7 @@ namespace WpfApp2
         {   
             InitializeComponent();
             AddNumberCommand = new RelayCommand(AddNumber, CanAddNumber);
+            AddActionCommand = new RelayCommand(Action, CanAction);
             this.DataContext = this;
         }
     }
