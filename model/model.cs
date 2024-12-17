@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
+using System.Reflection.Emit;
 
 namespace WpfApp2
 {
@@ -52,13 +53,16 @@ namespace WpfApp2
     }
     public partial class MainWindow
     {
+        public string NumberLabel { get { return numbers.ToString(); } }
         public ICommand AddNumberCommand { get; }
         public ICommand AddActionCommand { get; }
-        public uint numbers = 0;
+        private uint numbers = 0;
         
         private void AddNumber(object parameter)
         {
             numbers = numbers * 10 + Convert.ToUInt32(parameter.ToString());
+            label1.Content = numbers.ToString();
+            Console.WriteLine("numbers = " + numbers);
         }
         private void Action(object parameter)
         {
