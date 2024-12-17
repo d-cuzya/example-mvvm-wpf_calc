@@ -53,12 +53,13 @@ namespace WpfApp2
     public partial class MainWindow
     {
         public ICommand AddNumberCommand { get; }
-        public int numbers = 0;
+        public uint numbers = 0;
         
         private void AddNumber(object parameter)
         {
             Console.WriteLine(parameter);
-            numbers = numbers * 10 + (int)parameter;
+            numbers = numbers * 10 + Convert.ToUInt32(parameter.ToString());
+            Console.WriteLine("Current: " + numbers);
         }
         private bool CanAddNumber(object parameter)
         {
