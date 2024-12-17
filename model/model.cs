@@ -62,7 +62,6 @@ namespace WpfApp2
         }
         private bool CanAddNumber(object parameter)
         {
-            Console.WriteLine("dsaa");
             return true;
         }
     }
