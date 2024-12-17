@@ -56,37 +56,9 @@ namespace WpfApp2
         public string NumberLabel { get { return numbers.ToString(); } }
         public ICommand AddNumberCommand { get; }
         public ICommand AddActionCommand { get; }
-        private uint numbers = 0;
-        
-        private void AddNumber(object parameter)
-        {
-            numbers = numbers * 10 + Convert.ToUInt32(parameter.ToString());
-            label1.Content = numbers.ToString();
-            Console.WriteLine("numbers = " + numbers);
-        }
-        private void Action(object parameter)
-        {
-            switch (parameter.ToString()){
-                case "+":
-                    Console.WriteLine("action");
-                    break;
-                case "-":
-                    Console.WriteLine("action");
-                    break;
-                case "*":
-                    Console.WriteLine("action");
-                    break;
-                case "/":
-                    Console.WriteLine("action");
-                    break;
-                case "Enter":
-                    Console.WriteLine("action");
-                    break;
-                case "Clear":
-                    Console.WriteLine("action");
-                    break;
-            }
-        }
+        private double numbers = 0;
+        private double sec_numbers = 0;
+        private char actionChar = ' ';
         private bool CanAddNumber(object parameter)
         {
             return true;
