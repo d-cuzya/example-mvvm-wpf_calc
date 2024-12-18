@@ -17,7 +17,7 @@ namespace WpfApp2
         {
             numbers = numbers * 10 + Convert.ToDouble(parameter.ToString());
             label1.Content = numbers.ToString();
-            Console.WriteLine("numbers = " + numbers);
+            //Console.WriteLine("numbers = " + numbers);
         }
         private void Action(object parameter)
         {
