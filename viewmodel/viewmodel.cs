@@ -20,6 +20,7 @@ namespace WpfApp2
         }
         private void Action(object parameter)
         {
+            string asdsad = parameter as string;
             if (parameter.ToString() == "Enter")
             {
                 switch (actionChar)

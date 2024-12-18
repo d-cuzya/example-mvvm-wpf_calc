@@ -22,7 +22,8 @@ namespace WpfApp2
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public MainWindow()
-        {   
+        {
+            //https://github.com/Pluser761/Countries/blob/master/Views/MainWindow.xaml DataContext & Locator
             InitializeComponent();
             AddNumberCommand = new RelayCommand(AddNumber, CanAddNumber);
             AddActionCommand = new RelayCommand(Action, CanAction);
