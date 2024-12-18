@@ -23,7 +23,6 @@ namespace WpfApp2
         public RelayCommand(Action<object> execute) : this(execute, null)
         {
         }
-
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
@@ -66,6 +65,27 @@ namespace WpfApp2
         private bool CanAction(object parameter)
         {
             return true;
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+                switch (prop)
+                {
+                    case "numbers":
+                        label1.Content = Convert.ToString(numbers);
+                        break;
+                    case "sec_numbers":
+                        label2.Content = sec_numbers;
+                        break;
+                    case "actionChar":
+                        label3.Content = actionChar;
+                        break;
+                }
+                Console.WriteLine(prop + " was updated!");
+            }
         }
     }
 }

@@ -16,50 +16,53 @@ namespace WpfApp2
         private void AddNumber(object parameter)
         {
             numbers = numbers * 10 + Convert.ToDouble(parameter.ToString());
-            label1.Content = numbers.ToString();
+            OnPropertyChanged("numbers");
             //Console.WriteLine("numbers = " + numbers);
         }
         private void Action(object parameter)
         {
             if (parameter.ToString() == "Enter")
             {
-                switch (label3.Content.ToString())
+                switch (actionChar)
                 {
-                    case "+":
+                    case '+':
                         numbers += sec_numbers;
                         break;
-                    case "-":
+                    case '-':
                         numbers -= sec_numbers;
                         break;
-                    case "*":
+                    case '*':
                         numbers *= sec_numbers;
                         break;
-                    case "/":
+                    case '/':
                         numbers /= sec_numbers;
                         break;
                 }
+
                 label1.Content = numbers;
                 sec_numbers = 0;
                 actionChar = ' ';
-                label2.Content = "";
-                label3.Content = actionChar;
+                OnPropertyChanged("sec_numbers");
+                OnPropertyChanged("actionChar");
                 return;
             } else if (parameter.ToString() == "Clear")
             {
                 numbers = 0;
                 actionChar = ' ';
                 sec_numbers = 0;
-                label1.Content = numbers;
-                label2.Content = "";
-                label3.Content = actionChar;
+                OnPropertyChanged("numbers");
+                OnPropertyChanged("sec_numbers");
+                OnPropertyChanged("actionChar");
                 return;
             }
             actionChar = Convert.ToChar(parameter);
+            Console.WriteLine("p - " + parameter.ToString());
+            Console.WriteLine("q - "+ Convert.ToChar(parameter.ToString()));
             sec_numbers = numbers;
             numbers = 0;
-            label2.Content = sec_numbers;
-            label1.Content = "";
-            label3.Content = actionChar;
+            OnPropertyChanged("numbers");
+            OnPropertyChanged("sec_numbers");
+            OnPropertyChanged("actionChar");
         }
 
     }
