@@ -55,9 +55,12 @@ namespace WpfApp2
         public string NumberLabel { get { return numbers.ToString(); } }
         public ICommand AddNumberCommand { get; }
         public ICommand AddActionCommand { get; }
-        private double numbers = 0;
-        private double sec_numbers = 0;
-        private char actionChar = ' ';
+        private double _numbers = 0;
+        private double _sec_numbers = 0;
+        private char _actionChar = ' ';
+        private double numbers { get { return _numbers; } set { _numbers = value; OnPropertyChanged("numbers"); } }
+        private double sec_numbers { get { return _sec_numbers; } set { _sec_numbers = value; OnPropertyChanged("sec_numbers"); } }
+        private char actionChar { get { return _actionChar; } set { _actionChar = value; OnPropertyChanged("actionChar"); } }
         private bool CanAddNumber(object parameter)
         {
             return true;
@@ -78,7 +81,7 @@ namespace WpfApp2
                         label1.Content = Convert.ToString(numbers);
                         break;
                     case "sec_numbers":
-                        label2.Content = sec_numbers;
+                        label2.Content = Convert.ToString(sec_numbers);
                         break;
                     case "actionChar":
                         label3.Content = actionChar;
