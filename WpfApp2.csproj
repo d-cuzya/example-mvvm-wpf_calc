@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="locator.cs" />
     <Compile Include="model\model.cs" />
     <Compile Include="viewmodel\viewmodel.cs" />
     <Compile Include="view\MainWindow.xaml.cs">

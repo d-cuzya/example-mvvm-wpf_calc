@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:WpfApp2"
              StartupUri="./view/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <local:locator x:Key="Locator"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -10,8 +10,9 @@ using System.Windows.Input;
 namespace WpfApp2
 {
     
-    public partial class MainWindow
+    public class ViewModel:Model
     {
+        //Model model = new Model();
         public ICommand IncrementAppearance { get; private set; }
         private void AddNumber(object parameter)
         {
