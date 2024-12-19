@@ -12,6 +12,13 @@ namespace WpfApp2
     
     public class ViewModel:Model
     {
+        //public string label1;
+        //public string label2;
+        //public string label3;
+        public ViewModel()
+        {
+            
+        }
         //Model model = new Model();
         //public ICommand IncrementAppearance { get; private set; }
     }

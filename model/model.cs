@@ -52,7 +52,7 @@ namespace WpfApp2
     }
     public class Model: INotifyPropertyChanged
     {
-        public string NumberLabel { get { return numbers.ToString(); } }
+        public string NumberLabel { get { return numbers.ToString(); } set { } }
         public ICommand AddNumberCommand { get; }
         public ICommand AddActionCommand { get; }
         private double _numbers = 0;
@@ -75,11 +75,12 @@ namespace WpfApp2
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
-                Console.Clear();
+                //Console.Clear();
                 switch (prop)
                 {
                     case "numbers":
                         //label1.Content = Convert.ToString(numbers);
+                        NumberLabel = Convert.ToString(numbers);
                         break;
                     case "sec_numbers":
                         //label2.Content = Convert.ToString(sec_numbers);
@@ -143,4 +144,3 @@ namespace WpfApp2
         }
     }
 }
-

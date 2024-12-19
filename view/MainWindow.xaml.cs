@@ -26,8 +26,6 @@ namespace WpfApp2
             // https://github.com/Pluser761/Countries/blob/master/Views/MainWindow.xaml DataContext & Locator
             // Разделить всё на классы
             InitializeComponent();
-            
-            //
         }
     }
 }
