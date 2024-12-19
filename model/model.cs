@@ -98,7 +98,6 @@ namespace WpfApp2
         public void AddNumber(object parameter)
         {
             numbers = numbers * 10 + Convert.ToDouble(parameter.ToString());
-            //Console.WriteLine("numbers = " + numbers);
         }
         public void Action(object parameter)
         {
@@ -132,8 +131,6 @@ namespace WpfApp2
                 return;
             }
             actionChar = Convert.ToChar(parameter);
-            Console.WriteLine("p - " + parameter.ToString());
-            Console.WriteLine("q - " + Convert.ToChar(parameter.ToString()));
             sec_numbers = numbers;
             numbers = 0;
         }
