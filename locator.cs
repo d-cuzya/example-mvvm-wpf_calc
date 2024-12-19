@@ -8,6 +8,6 @@ namespace WpfApp2
 {
     class locator
     {
-        ViewModel vm = new ViewModel();
+        public ViewModel vm = new ViewModel();
     }
 }

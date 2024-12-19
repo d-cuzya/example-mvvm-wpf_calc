@@ -61,11 +61,11 @@ namespace WpfApp2
         protected double numbers { get { return _numbers; } set { _numbers = value; OnPropertyChanged("numbers"); } }
         protected double sec_numbers { get { return _sec_numbers; } set { _sec_numbers = value; OnPropertyChanged("sec_numbers"); } }
         protected char actionChar { get { return _actionChar; } set { _actionChar = value; OnPropertyChanged("actionChar"); } }
-        private bool CanAddNumber(object parameter)
+        public bool CanAddNumber(object parameter)
         {
             return true;
         }
-        private bool CanAction(object parameter)
+        public bool CanAction(object parameter)
         {
             return true;
         }
@@ -93,6 +93,53 @@ namespace WpfApp2
                 Console.Write(actionChar); 
                 Console.Write(Convert.ToString(sec_numbers));
             }
+        }
+        public void AddNumber(object parameter)
+        {
+            numbers = numbers * 10 + Convert.ToDouble(parameter.ToString());
+            //Console.WriteLine("numbers = " + numbers);
+        }
+        public void Action(object parameter)
+        {
+            string asdsad = parameter as string;
+            if (parameter.ToString() == "Enter")
+            {
+                switch (actionChar)
+                {
+                    case '+':
+                        numbers += sec_numbers;
+                        break;
+                    case '-':
+                        numbers -= sec_numbers;
+                        break;
+                    case '*':
+                        numbers *= sec_numbers;
+                        break;
+                    case '/':
+                        numbers /= sec_numbers;
+                        break;
+                }
+                sec_numbers = 0;
+                actionChar = ' ';
+                return;
+            }
+            else if (parameter.ToString() == "Clear")
+            {
+                numbers = 0;
+                actionChar = ' ';
+                sec_numbers = 0;
+                return;
+            }
+            actionChar = Convert.ToChar(parameter);
+            Console.WriteLine("p - " + parameter.ToString());
+            Console.WriteLine("q - " + Convert.ToChar(parameter.ToString()));
+            sec_numbers = numbers;
+            numbers = 0;
+        }
+        public Model()
+        {
+            AddNumberCommand = new RelayCommand(AddNumber, CanAddNumber);
+            AddActionCommand = new RelayCommand(Action, CanAction);
         }
     }
 }

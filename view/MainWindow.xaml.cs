@@ -26,9 +26,8 @@ namespace WpfApp2
             // https://github.com/Pluser761/Countries/blob/master/Views/MainWindow.xaml DataContext & Locator
             // Разделить всё на классы
             InitializeComponent();
-            //AddNumberCommand = new RelayCommand(AddNumber, CanAddNumber);
-            //AddActionCommand = new RelayCommand(Action, CanAction);
-            //this.DataContext = this;
+            
+            //
         }
     }
 }

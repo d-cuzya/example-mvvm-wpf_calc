@@ -13,49 +13,7 @@ namespace WpfApp2
     public class ViewModel:Model
     {
         //Model model = new Model();
-        public ICommand IncrementAppearance { get; private set; }
-        private void AddNumber(object parameter)
-        {
-            numbers = numbers * 10 + Convert.ToDouble(parameter.ToString());
-            //Console.WriteLine("numbers = " + numbers);
-        }
-        private void Action(object parameter)
-        {
-            string asdsad = parameter as string;
-            if (parameter.ToString() == "Enter")
-            {
-                switch (actionChar)
-                {
-                    case '+':
-                        numbers += sec_numbers;
-                        break;
-                    case '-':
-                        numbers -= sec_numbers;
-                        break;
-                    case '*':
-                        numbers *= sec_numbers;
-                        break;
-                    case '/':
-                        numbers /= sec_numbers;
-                        break;
-                }
-                sec_numbers = 0;
-                actionChar = ' ';
-                return;
-            } else if (parameter.ToString() == "Clear")
-            {
-                numbers = 0;
-                actionChar = ' ';
-                sec_numbers = 0;
-                return;
-            }
-            actionChar = Convert.ToChar(parameter);
-            Console.WriteLine("p - " + parameter.ToString());
-            Console.WriteLine("q - "+ Convert.ToChar(parameter.ToString()));
-            sec_numbers = numbers;
-            numbers = 0;
-        }
-
+        //public ICommand IncrementAppearance { get; private set; }
     }
    
 }
